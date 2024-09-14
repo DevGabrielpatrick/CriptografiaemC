@@ -1,17 +1,17 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+
+
  // mensagem que o usuario vai escrever 5465636E6F336C6f67696120646120496E666f726D6187C66F2E003333333333333333333333333333333333333333333333
 void SepararPares(const char *str) {
     char pares_mensagem[51]; 
     int len = strlen(str);
     int quantidade_pares = 0;
-    for (int i = 0; i < len - 1; i += 2) {
+    for (int i = 0; i < len - 1; i +) {
         quantidade_pares++;
         pares_mensagem[i] = str[i];
-        pares_mensagem[i + 1] = str[i + 1];
-        pares_mensagem[i + 2] = '\0'; // Adiciona o terminador nulo
-        printf("\nPar numero %i, mensagem: %c%c\n", quantidade_pares, pares_mensagem[i], pares_mensagem[i + 1]);
+        printf("\nPar numero %i,indice %i mensagem: %c\n", quantidade_pares,str[i] pares_mensagem[i]);
     }
 }
 
@@ -33,9 +33,11 @@ int main() {
     // Mensagem criptografada que o usuário vai escrever
     printf("Escreva a mensagem criptografada de até 100 dígitos: ");
     fgets(mensagem, sizeof(mensagem), stdin);
+    
 
     // Remove o caractere de nova linha, se presente
     mensagem[strcspn(mensagem, "\n")] = '\0';
+
 
     // Converte a mensagem hexadecimal para ASCII
     ConverterHexParaASCII(mensagem, ascii_mensagem);
